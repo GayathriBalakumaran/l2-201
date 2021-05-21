@@ -33,7 +33,7 @@ def resolve(dns_records, lookup_chain, domain)
       return lookup_chain << value[2]
     elsif value[0]=== "CNAME" && value[1] == domain
       lookup_chain<<value[2]
-      return resove(dns_records, lookup_chain, value[2] )
+      return resolve(dns_records, lookup_chain, value[2] )
     end
   end
   if(arr.include?(domain) ===false)
